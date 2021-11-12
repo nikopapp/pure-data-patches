@@ -1,0 +1,199 @@
+#N canvas 92 25 1118 933 12;
+#X obj 294 66 tgl 30 0 empty empty empty 17 7 0 10 #c6ffc7 #000000
+#000000 0 1;
+#X obj 306 115 metro 500;
+#X floatatom 367 85 5 0 0 0 - - - 0;
+#X obj 507 899 dac~;
+#X obj 211 154 mycounter;
+#X floatatom 212 182 5 0 0 0 - - - 0;
+#X obj 202 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #ffc7c6
+#ff0400 #000000;
+#X obj 221 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 240 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 258 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 277 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #ffc7c6
+#551312 #000000;
+#X obj 296 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 315 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 578 310 vsl 40 128 0 0.7 0 0 empty empty Amp 0 -9 0 10 #feffc6
+#000000 #000000 0 1;
+#X obj 574 833 +~;
+#X obj 558 141 bng 30 250 50 0 empty empty Init\\\ Arp 4 -10 0 10 #faff00
+#000000 #000000;
+#X obj 536 102 loadbang;
+#X msg 725 878 start;
+#X msg 732 906 stop;
+#X text 803 879 start streaming audio;
+#X text 805 905 stop streaming audio;
+#X text 976 851 16-bit integer file;
+#X obj 568 919 writesf~ 2;
+#X obj 422 95 ms2bpm;
+#X obj 524 61 nbx 3 30 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
+#fcfcfc #000000 #000000 0 256;
+#X obj 555 809 +~;
+#X obj 540 787 *~ 0.3;
+#X msg 723 853 open /Users/nikos/Music/Pd/foo3.wav;
+#X obj 335 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#N canvas 121 146 465 293 (subpatch) 0;
+#X array master 3000 float 2;
+#X coords 0 1 3000 -1 200 140 1 0 0;
+#X restore 1022 679 graph;
+#X obj 1021 623 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1021 577 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 1022 642 tabwrite~ master;
+#X obj 1023 548 loadbang;
+#X obj 1022 598 metro 100;
+#X obj 593 638 vsl 40 128 0 0.7 0 0 empty empty Amp 0 -9 0 10 #feffc6
+#000000 #000000 0 1;
+#X obj 626 365 SSimplePhasor;
+#X msg 595 596 0.5;
+#X msg 906 60 \; pd dsp 1;
+#X obj 674 195 SSequencer;
+#X msg 580 270 0.3;
+#X obj 654 455 TestFilter;
+#X msg 653 874 open \$1;
+#X text 1060 915 open any file;
+#X obj 727 801 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 726 823 savepanel;
+#X obj 258 378 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 368 61 380;
+#X obj 248 795 +~;
+#X floatatom 226 423 5 0 0 0 - - - 0;
+#X obj 282 552 TestFilter;
+#X obj 457 386 vsl 40 128 0 0.7 0 0 empty empty Amp 0 -9 0 10 #feffc6
+#000000 #000000 0 1;
+#X obj 356 258 bng 15 250 50 0 empty empty empty 17 7 0 10 #ffc7c6
+#ff0400 #000000;
+#X obj 375 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 394 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 412 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 431 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #ffc7c6
+#551312 #000000;
+#X obj 450 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 469 259 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 489 258 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 212 234 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X obj 209 209 % 16;
+#X obj 215 121 del;
+#X obj 243 85 / 2;
+#X obj 655 662 STriverb;
+#X obj 507 285 bng 30 250 50 0 empty empty Init\\\ Arp 4 -10 0 10 #faff00
+#000000 #000000;
+#X msg 221 390 67;
+#X floatatom 458 522 5 0 0 0 - - - 0;
+#X floatatom 579 440 5 0 0 0 - - - 0;
+#X floatatom 593 774 5 0 0 0 - - - 0;
+#X msg 458 345 0.7;
+#X obj 234 453 Kick2;
+#X obj 976 323 midi2freq;
+#X floatatom 1008 266 5 0 0 0 - - - 0;
+#X obj 998 203 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 836 613 SSampler;
+#X obj 943 422 vsl 40 128 0 0.7 0 0 empty empty Amp 0 -9 0 10 #feffc6
+#000000 #000000 0 1;
+#X floatatom 944 558 5 0 0 0 - - - 0;
+#X msg 944 381 0.7;
+#X connect 0 0 1 0;
+#X connect 1 0 39 0;
+#X connect 1 0 62 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 2 0 23 0;
+#X connect 2 0 63 0;
+#X connect 4 0 5 0;
+#X connect 5 0 61 0;
+#X connect 6 0 46 0;
+#X connect 9 0 46 0;
+#X connect 11 0 46 0;
+#X connect 12 0 46 0;
+#X connect 13 0 36 0;
+#X connect 13 0 68 0;
+#X connect 14 0 3 0;
+#X connect 14 0 3 1;
+#X connect 14 0 22 0;
+#X connect 14 0 22 1;
+#X connect 14 0 32 0;
+#X connect 15 0 37 0;
+#X connect 15 0 40 0;
+#X connect 15 0 47 0;
+#X connect 15 0 65 0;
+#X connect 15 0 78 0;
+#X connect 16 0 15 0;
+#X connect 17 0 22 0;
+#X connect 18 0 22 0;
+#X connect 23 0 24 0;
+#X connect 25 0 14 0;
+#X connect 26 0 25 0;
+#X connect 27 0 22 0;
+#X connect 30 0 32 0;
+#X connect 31 0 34 0;
+#X connect 33 0 31 0;
+#X connect 34 0 30 0;
+#X connect 35 0 26 1;
+#X connect 35 0 69 0;
+#X connect 36 0 41 0;
+#X connect 37 0 35 0;
+#X connect 39 0 36 1;
+#X connect 40 0 13 0;
+#X connect 41 0 64 0;
+#X connect 42 0 22 0;
+#X connect 44 0 45 0;
+#X connect 45 0 42 0;
+#X connect 46 0 71 1;
+#X connect 47 0 2 0;
+#X connect 48 0 25 1;
+#X connect 49 0 71 0;
+#X connect 50 0 48 0;
+#X connect 51 0 67 0;
+#X connect 51 0 71 2;
+#X connect 52 0 46 0;
+#X connect 56 0 46 0;
+#X connect 60 0 6 0;
+#X connect 60 1 7 0;
+#X connect 60 2 8 0;
+#X connect 60 3 9 0;
+#X connect 60 4 10 0;
+#X connect 60 5 11 0;
+#X connect 60 6 12 0;
+#X connect 60 7 28 0;
+#X connect 60 8 52 0;
+#X connect 60 9 53 0;
+#X connect 60 10 54 0;
+#X connect 60 11 55 0;
+#X connect 60 12 56 0;
+#X connect 60 13 57 0;
+#X connect 60 14 58 0;
+#X connect 60 15 59 0;
+#X connect 61 0 60 0;
+#X connect 62 0 4 0;
+#X connect 63 0 62 1;
+#X connect 64 0 26 0;
+#X connect 65 0 66 0;
+#X connect 65 0 70 0;
+#X connect 66 0 49 0;
+#X connect 70 0 51 0;
+#X connect 71 0 50 0;
+#X connect 72 0 36 1;
+#X connect 73 0 72 0;
+#X connect 74 0 73 0;
+#X connect 75 0 14 1;
+#X connect 76 0 77 0;
+#X connect 77 0 75 0;
+#X connect 78 0 76 0;

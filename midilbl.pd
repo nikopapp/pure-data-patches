@@ -1,0 +1,37 @@
+#N canvas 846 126 495 345 12;
+#X obj 140 390 midilabel;
+#X obj 214 363 cnv 15 100 60 empty mdlbl D#3 20 19 0 30 #e0e0e0 #404040
+0;
+#X obj 129 442 send mdlbl;
+#X msg 133 416 label \$1;
+#X obj 150 400 midilabel;
+#X obj 224 373 cnv 15 100 60 empty mdlbl D#3 20 19 0 30 #e0e0e0 #404040
+0;
+#X obj 139 452 send mdlbl;
+#X msg 143 426 label \$1;
+#X obj 160 410 midilabel;
+#X obj 234 383 cnv 15 100 60 empty mdlbl D#3 20 19 0 30 #e0e0e0 #404040
+0;
+#X obj 149 462 send mdlbl;
+#X msg 153 436 label \$1;
+#X obj 170 420 midilabel;
+#X obj 159 472 send mdlbl;
+#X msg 163 446 label \$1;
+#X obj 127 83 midilabel;
+#X msg 127 113 label \$1;
+#X obj 126 138 send mdlbl;
+#X obj 1 14 cnv 15 80 40 empty mdlbl D#3 20 12 0 30 #e0e0e0 #404040
+0;
+#X obj 130 50 inlet;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 19 0 15 0;
+#X coords 0 -1 1 1 85 60 1 0 0;

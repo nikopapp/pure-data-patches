@@ -1,0 +1,9 @@
+#N canvas 671 210 450 300 12;
+#X obj 160 121 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 160 141 5 0 0 0 - - - 0;
+#X obj 143 210 print s;
+#X obj 160 173 midilabel;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
